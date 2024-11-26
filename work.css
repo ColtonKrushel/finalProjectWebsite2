@@ -1,0 +1,283 @@
+/* CSS variables
+    Used to assign a name to a value that is used throughout a stylesheet
+
+    Rule(s) for creating a CSS variable:
+        name has to start with --, e.g. --primary-color
+
+    To output a variable's value, use the var() function
+        e.g. var(--primary-color)
+
+    We can define default values inside the var() function in case the variable is not defined
+*/
+/* :root = html */
+:root {
+    /* variables defined in :root are accessible anywhere */
+    --background-color:#D9CFA6;
+    --secondary-color:#A5B8D9;
+    --primary-color: #303F59;
+    --special-color: goldenrod;
+    --textBG-color: #F0E4B6;
+    --dimension: 100px;
+}
+
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    margin: 0;
+
+    h1, h2, p, a {
+        font-family: Ubuntu, sans;
+    }
+}
+/*
+    <header>
+        <h1><a href="index.html">Chris Harris</a></h1>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="work.html">Work</a></li>
+            </ul>
+        </nav>
+    </header>
+
+*/
+header {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    opacity: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    background-color: var(--secondary-color);
+
+    a {
+        text-decoration: none;
+        padding-bottom: 3px;
+        /* CSS transitions
+            transition: <property> <duration> <function>
+        */
+        border-bottom: 2px solid transparent;
+        transition: border-bottom 250ms ease;
+    }
+    a:hover {
+        border-bottom: 2px solid black;
+    }
+    #desktop-menu {
+        display: none;
+    }
+    #mobile-menu ul {
+        font-size: 2em;
+        display: flex;
+        gap: 20px;
+        list-style: none;
+    }
+}
+
+footer {
+    opacity: 0.6;
+
+    #dividing-line {
+        scale: 0.4;
+        display: flex;
+        justify-content: center;
+    }
+
+    #footer-grid {
+        display: flex;
+    }
+
+    .footer-item {
+        flex: 1;
+        display: flex;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+#info-grid {
+    display: grid;
+    grid: repeat(4, 1fr) / repeat(2, 1fr);
+    gap: 1em;
+    margin: 1em;
+    overflow: hidden;
+
+    #text-box1, #text-box2, #item1, #item2, #item3, #item4, #item5, #item6 {
+        background-color: var(--background-color);
+        border: 1em solid var(--background-color);
+        p {
+            background-color: var(--textBG-color);
+        }
+        h2 {
+            color: var(--special-color);
+        }
+        opacity: 0;
+        animation: slideInFromBottom 1s ease-out forwards;
+    }
+
+    #text-box1 {
+        animation-delay: 0s;
+    }
+
+    #item1 {
+        animation-delay: 0.5s;
+    }
+
+    #item2 {
+        animation-delay: 1s;
+    }
+
+    #item3 {
+        animation-delay: 1.5s;
+    }
+
+    #text-box2 {
+        animation-delay: 2s;
+    }
+
+    #item4 {
+        animation-delay: 2.5s;
+    }
+
+    #item5 {
+        animation-delay: 3s;
+    }
+
+    #item6 {
+        animation-delay: 3.5s;
+    }
+
+    #item1, #item2, #item3, #item4, #item5, #item6 {
+        aspect-ratio: 1;
+        overflow: hidden;
+    }
+
+    img {
+        height: 0px;
+        width: 0px;
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+        transition: 0.3s ease;
+    }
+
+    img:hover {
+        transform: scale(1.15);
+    }
+}
+
+a {
+    color: var(--primary-color, darkgrey); /* anywhere you want to apply the color, output the value of the variable instead of the hard-coded value */
+}
+p {
+    color: var(--primary-color);
+}
+div#callout {
+    border: 2px solid var(--primary-color);
+}
+
+/* Desktop */
+@media screen and (min-width: 1000px) {
+    header#mobile-menu {
+        display: none;
+    }
+    header#desktop-menu {
+        font-size: 2em;
+        display: flex;
+        gap: 20px;
+        list-style: none;
+    }
+
+    #info-grid {
+        display: grid;
+        grid: repeat(4, 1fr) / repeat(3, 1fr);
+        gap: 1em;
+        margin: 1em 10em;
+        overflow: hidden;
+    
+        #text-box1, #text-box2, #item1, #item2, #item3, #item4, #item5, #item6 {
+            background-color: var(--background-color);
+            border: 1em solid var(--background-color);
+            p {
+                background-color: var(--textBG-color);
+            }
+            h2 {
+                color: var(--special-color);
+            }
+            opacity: 0;
+            animation: slideInFromBottom 1s ease-out forwards;
+        }
+    
+        #text-box1 {
+            animation-delay: 0s;
+        }
+    
+        #item1 {
+            animation-delay: 0.5s;
+        }
+    
+        #item2 {
+            animation-delay: 1s;
+        }
+    
+        #item3 {
+            animation-delay: 1.5s;
+        }
+    
+        #text-box2 {
+            animation-delay: 2s;
+        }
+    
+        #item4 {
+            animation-delay: 2.5s;
+        }
+    
+        #item5 {
+            animation-delay: 3s;
+        }
+    
+        #item6 {
+            animation-delay: 3.5s;
+        }
+    
+        #item3, #item6 {
+            aspect-ratio: 1;
+            overflow: hidden;
+        }
+
+        #item1, #item2, #item4, #item5 {
+            grid-row: span 2;
+            aspect-ratio: 0.5;
+            overflow: hidden;
+        }
+    
+        img {
+            height: 0px;
+            width: 0px;
+            object-fit: cover;
+            height: 100%;
+            width: 100%;
+            transition: 0.3s ease;
+        }
+    
+        img:hover {
+            transform: scale(1.15);
+        }
+    }
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(50%);
+        opacity: 0;
+    }
+    100% {
+        transform: translate(0);
+        opacity: 1;
+    }
+}

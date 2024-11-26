@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <link rel="stylesheet" href="contact.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&family=Ubuntu:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--
+
+        Color scheme 
+
+        Three color palette: primary (most used), secondary (accent), highlight
+
+        color.adobe.com is an example of a site that will help generate color schemes based on a main color (with examples of different 'color' harmonies, eg. contrasting, monochromatic)
+
+        Restrictions and recommendations:
+        - Black and white cannot be part of your three-color scheme
+        - It is ok to use background colors but you probably shouldn't use colored text on a colored background throughout the site
+        - colors should be accessible - use contrast checker with your color scheme to ensure that they pass AA or AAA (https://webaim.org/resources/contrastchecker/)
+
+    -->
+    <header>
+        <h1><a href="index.html">Colton Krushel</a></h1>
+        <div id="desktop-menu">
+            <nav>
+                <ul>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="mobile-menu">
+            <nav>
+                <ul>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <a id="top"></a>
+        <div id="info-grid">
+            <div id="text-box1">
+                <h2 class="info-header">
+                    Consultation Booking
+                </h2>
+                <p class="info-paragraph">
+                    Consultations are available for helping with web design, game design, or SEO optimization for webpages, all fields are required for submission other than a phone number, consultations are from one to four hours each
+                </p>
+            </div>
+            <div id="text-box2">
+                <h2 class="info-header">
+                    Requirements
+                </h2>
+                <p class="info-paragraph">
+                    Please note I may not be available on the chosen days as I have a highly variable schedule, generally weekdays work best but depending on class times it may need to be subject to rescheduling
+                </p>
+            </div>
+            <div id="contact-form">
+                <form action="recieved.html" method="post" id="appointments">
+                    <p>
+                        <label for="fullName">Full Name</label>
+                        <input type="text" name="fullName" id="fullName" placeholder="First Name + Last name" required>
+                    </p>
+                    <p>
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" id="email" placeholder="****@***.com" pattern="^[\w-\.]+@([\w-]+\.)+com$" required>
+                    </p>
+                    <p>
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="(###)-###-####" pattern="^\(\d{3}\)\-\d{3}\-\d{4}$">
+                    </p>
+                    <p>
+                        <label for="bookingType">Type of Booking</label>
+                        <select name="bookingType" id="bookingType" required>
+                            <option value="website">Website Design</option>
+                            <option value="game">Game Development</option>
+                            <option value="seo">SEO Optimization</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="date">Date of Booking</label>
+                        <input type="date" name="date" id="date" required>
+                    </p>
+                    <p>
+                        <label for="hours">Consultation Length (hours)</label>
+                        <input type="number" name="number" id="number" min="1" max="4" required>
+                    </p>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="dividing-line">
+            <picture>
+                <img src="images\—Pngtree—creative simple dividing line_5054140.png" alt="">
+            </picture>
+        </div>
+        <div id="footer-grid">
+            <div class="footer-item">
+                <p>Phone: 604-396-8940</p>
+            </div>
+            <a href="#top">Back To Top</a>
+            <div class="footer-item">
+                <p>Email: Ckrushel@my.bcit.ca</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

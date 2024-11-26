@@ -1,0 +1,48 @@
+:root {
+    /* variables defined in :root are accessible anywhere */
+    --background-color:#D9CFA6;
+    --secondary-color:#A5B8D9;
+    --primary-color: #303F59;
+    --special-color: goldenrod;
+    --textBG-color: #F0E4B6;
+    --dimension: 100px;
+}
+
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    margin: 0;
+
+    h1, h2, p, a {
+        font-family: Ubuntu, sans;
+    }
+}
+main {
+    /* the --special-color variable can only be used inside main */
+    --special-color: goldenrod;
+
+
+    h1 {
+        color: var(--special-color);
+    }
+}
+
+#submissionText{
+    background-color: var(--background-color);
+    border: 1em solid var(--background-color);
+    p {
+        background-color: var(--textBG-color);
+    }
+    h1 {
+        color: var(--special-color);
+    }
+
+    width: 300px;
+    height: 200px;
+    text-align: center;
+
+    position: absolute;
+    left: calc(50% - 150px);
+}
